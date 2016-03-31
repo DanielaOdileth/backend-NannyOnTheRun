@@ -70,7 +70,9 @@ exports.createUser = {
       var newUserusername = request.payload.username;
       var newUserpassword = request.payload.password;
       var newUsertelephone = request.payload.telephone;
-
+      var newUseremail = request.payload.email;
+      var newUseraddress = request.payload.address;
+      var newUserphoto = request.payload.photo;
       user.findOneAndUpdate(
         { _id: filterBy },
         {
@@ -79,7 +81,7 @@ exports.createUser = {
           password: newUserpassword,
           telephone: newUsertelephone,
           status : request.payload.status,
-          scope : request.payload.scope
+          scope : request.payload.scope,
           email : newUseremail,
           address : newUseraddress,
           photo : newUserphoto
