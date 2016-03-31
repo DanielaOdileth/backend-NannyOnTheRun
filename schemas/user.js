@@ -7,7 +7,10 @@ var UserSchema = new mongoose.Schema({
   password : String,
   telephone : String,
   status : Boolean,
-  scope : String
+  scope : String,
+  email : String,
+  address : String,
+  photo : String
 });
 
 UserSchema.plugin(uniqueValidator);

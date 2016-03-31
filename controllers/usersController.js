@@ -15,7 +15,10 @@ exports.createUser = {
          password : SHA3(request.payload.password),
          telephone : request.payload.telephone,
          status : request.payload.status,
-         scope : request.payload.scope
+         scope : request.payload.scope,
+         email : request.payload.email,
+         address : request.payload.address,
+         photo : request.payload.photo
        });
        newUser.save(function (err) {
          console.log(err);
@@ -77,6 +80,9 @@ exports.createUser = {
           telephone: newUsertelephone,
           status : request.payload.status,
           scope : request.payload.scope
+          email : newUseremail,
+          address : newUseraddress,
+          photo : newUserphoto
 
         }, function (err, users){
           users.save(function(err){
